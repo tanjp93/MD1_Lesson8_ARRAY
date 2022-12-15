@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label ><input id="input" type="text"></label> <button onclick="clickWord()">Change Word</button>
+<label id="resultWord">
+
+
+</label>
+<script>
+    function clickWord() {
+        var  inputWord = document.getElementById('input').value;
+        var uperCase= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var lowerCase= 'abcdefghijklmnopqrstuvwxyz';
+        var result=[];
+        for (let i = 0; i <inputWord.length ; i++) {
+            if (uperCase.indexOf(inputWord[i])!==-1){
+                result.push( inputWord[i].toLowerCase());
+                console.log(uperCase.indexOf(inputWord[i]))
+            }else{
+                if (lowerCase.indexOf(inputWord[i])!==-1){
+                    result.push(inputWord[i].toUpperCase())
+                }else{
+                    result.push(inputWord[i]);
+                }
+            }
+        }
+        document.getElementById('resultWord').innerText=result.join("")
+        console.log('result>>>>', result)
+    }
+</script>
+</body>
+</html>

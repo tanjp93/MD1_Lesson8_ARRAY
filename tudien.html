@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="text" id="search">
+<button onclick="dich()">Dịch</button>
+<h2 id="kq"></h2>
+<script>
+
+  let arr1 = ["Husband","Wife","Me"];
+  let arr2 = ["Chồng","Vợ","Tôi"];
+
+  function dich() {
+    let check = false;
+    let j;
+    let search = document.getElementById('search').value;
+    for (let i = 0; i < arr2.length; i++) {
+      if (search.toLowerCase()==arr2[i].toLowerCase()){
+        check =true;
+        j=i;
+        break;
+      }
+    }
+    if (check){
+      document.getElementById('kq').innerHTML = arr1[j]
+    }else{
+      document.getElementById('kq').innerHTML = 'Từ '+ search+' T Chưa Thêm Vào :))))))'
+    }
+  }
+</script>
+</body>
+</html>

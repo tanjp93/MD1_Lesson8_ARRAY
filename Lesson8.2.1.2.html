@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label></label>
+<script>
+const num=window.prompt();
+// document.getElementsByTagName("<label>").value=+num;
+const numStr =num.toString();
+const numArr=[numStr[0]];
+for (let i = 1; i <numStr.length ; i++) {
+  if ((numStr[i-1]%2===0) && (numStr[i]%2===0)){
+    numArr.push('-',numStr[i])
+
+  }else {numArr.push( numStr[i])}
+}
+console.log(numArr.join(''))
+</script>
+</body>
+</html>

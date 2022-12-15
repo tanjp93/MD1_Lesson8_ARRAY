@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="text-align: center">
+    <p><input type="text" style="width: 200px" id="searchMean">
+        <button onclick="search()">Search</button>
+    </p>
+    <br>
+    <p><label id="result"></label></p>
+</div>
+
+<script>
+    var vietnamese = ["0", "1", "2", "3", "4", "5", "8", 'mai'];
+    var English = ['zero', 'one', 'two', 'three', 'four', 'five', 'eight', 'tomorrow'];
+
+    function search() {
+        var searchMean = document.getElementById('searchMean').value;
+        let check = false;
+        for (let i = 0; i < vietnamese.length; i++) {
+            if (searchMean.toLowerCase() === English[i].toLowerCase()) {
+                console.log(searchMean + 'meaning is' + vietnamese[i]);
+                document.getElementById("result").innerHTML = vietnamese[i];
+                break;
+            } else if (searchMean.toLowerCase() === vietnamese[i].toLowerCase()) {
+                console.log(searchMean.toLowerCase() + 'meaning is' + English[i].toLowerCase());
+                document.getElementById("result").innerHTML = English[i];
+                break;
+            }
+            if (searchMean.toLowerCase() != vietnamese[i].toLowerCase() && searchMean.toLowerCase() != English[i].toLowerCase()) {
+                document.getElementById('result').innerHTML = "No Data";
+            }
+        }
+    }
+</script>
+</body>
+</html>
